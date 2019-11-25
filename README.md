@@ -27,6 +27,9 @@ Documentation\02_Tietokantamäärittely.pdf
 
 Versiohistoria:
 
+v0.04
+-Otettu käyttöön kirjautusmistoiminto
+
 v0.03
 - Otettu käyttöön Herokun automaattinen Github-integraatio.
 - Luotu perustoimintoja lajin (Species) tallentamiselle tietokantaan.

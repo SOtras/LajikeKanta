@@ -2,13 +2,21 @@
   <html>
     <head>
       <meta charset="utf-8">
-      <title>Otras LajikeKanta</title>
+      <title>TodoApplication</title>
     </head>
     
     <body>
+      {% if current_user.is_authenticated %}
+      <p>
+	Kirjautunut nimellä {{ current_user.name }}. <a href="{{ url_for('auth_logout') }}">Kirjaudu ulos</a>
+      </p>
+      {% else %}
+      <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
+      {% endif %}
+      
       <ul>
-  <li><a href="{{ url_for('species_index') }}">List Species</a></li>
-	<li><a href="{{ url_for('species_form') }}">Add a Species</a></li>
+	<li><a href="{{ url_for('species_index') }}">List species</a></li>
+	<li><a href="{{ url_for('species_form') }}">Add a species</a></li>
       </ul>
       
       {% block body %}
@@ -17,4 +25,4 @@
       </p>
       {% endblock %}
     </body>
-  </html>
+  </html>  
