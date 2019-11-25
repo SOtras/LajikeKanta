@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Species</th>
+      <th>Done</th>
+    </tr>
+    {% for species in species %}
+    <tr>
+      <td>{{ species.name }}</td>
+      <td>{{ species.done }}</td>
+      <td>
+        <form method="POST" action="{{ url_for('species_set_done', species_id=species.id) }}" >
+          <input type="submit" value="Change status!"/>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
